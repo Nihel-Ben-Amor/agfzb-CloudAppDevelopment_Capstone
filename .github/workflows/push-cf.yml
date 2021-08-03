@@ -27,6 +27,8 @@ jobs:
           curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
           ibmcloud --version
           ibmcloud config --check-version=false
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}" 
         shell: bash
       - name: Install CF plugin
         run: ibmcloud cf install -f
@@ -44,3 +46,4 @@ jobs:
       - name: Deploy manifest file
         run: ibmcloud cf push -f ./$MANIFEST_NAME
         shell: bash
+ 
