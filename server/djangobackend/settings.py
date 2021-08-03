@@ -27,8 +27,8 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost"]
-
+ALLOWED_HOSTS = ["localhost img src="images/settingspy.png" width="75%"/>"]
+<img src="images/settingspy.png" width="75%"/>
 
 # Application definition
 
