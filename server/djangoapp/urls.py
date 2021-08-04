@@ -8,9 +8,10 @@ urlpatterns = [
     path(route='', view=views.Home, name='home'),
     path(route='about', view=views.about, name='about'),
     path(route='contact', view=views.contact, name='contact'),
-    path(route='', view=views.login_request, name='login'),
+    path(route='login', view=views.login_request, name='login'),
+     path(route='logout', view=views.logout_request, name='logout'),
+    path(route='registration', view=views.registration_request, name='registration'),
     
-    path(route='registration', view=views.inscription, name='inscription'),
     
     # route is a string contains a URL pattern
     # view refers to the view function

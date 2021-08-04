@@ -30,28 +30,34 @@
       <li class="nav-item active">
         <a class="nav-link" href="contact">contact us </a>
       </li>
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="Username" placeholder="Username">
-      <input class="form-control mr-sm-2" type="Password" placeholder="Password">
-
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign</button>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
-    </form>
-
+       <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li>
+                <a class="btn btn-link" href="#">{{ user.first_name }}({{ user.username }})</a>
+                <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <form class="form-inline" action="{% url 'djangoapp:login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Username" name="username" >
+                        <input type="password" class="form-control" placeholder="Password" name="psw" >
+                        <button class="btn btn-primary" type="submit" >Login</button>
+                         
+                           
+                        <a href="registration"button class="btn btn-primary" type="submit">Signup</a></button>
+                        
+                    
+                        
+                    </div>
+                </form>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+       
    
-</ul>
-
-</div>
-{% if user.is_authenticated %}
-<div class="rightalign">
-       <div class="dropdown">
-           <button class="dropbtn">{{user.first_name}}</button>
-           <div class="dropdown-content">
-                <a href="{% url 'djangoapp:logout' %}">Logout</a>
-           </div>
-       </div>
-</div>
-{% endif %}
 
 
 
