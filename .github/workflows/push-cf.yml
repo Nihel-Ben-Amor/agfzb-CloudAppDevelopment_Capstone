@@ -8,7 +8,7 @@ env:
   IBM_CLOUD_GROUP: default
   IBM_CLOUD_SPACE: dev
   IBM_CLOUD_ORG: nihelbenamor
-  IBM_CLOUD_API: ${{secrets.IBM_CLOUD_API_KEY}}
+  IBM_CLOUD_API: Nxf19Hb__IN8uu1Fk7o8d3GCdQM7cVWvZ1xCPSMrwqY
 
 defaults:
   run:
